@@ -1,7 +1,8 @@
 package com.arne5.buffymod;
 
+import com.arne5.buffymod.proxy.CommonProxy;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -19,6 +20,10 @@ public class BuffyMod
 	{
 		public static final String MODID = "buffymod";
 		public static final String VERSION = "1.0";
+
+		@SidedProxy(clientSide="com.arne5.buffymod.proxy.ClientProxy", serverSide="com.arne5.buffymod.proxy.CommonProxy")
+		public static CommonProxy proxy;
+
 
 		@Mod.Instance(MODID)
 		public static BuffyMod instance;
@@ -40,11 +45,13 @@ public class BuffyMod
 				GameRegistry.registerItem(itemTest, itemTest.getUnlocalizedName().substring(5));
 				GameRegistry.registerBlock(blockTest, blockTest.getUnlocalizedName().substring(5));
 
+				//reggister rendering fo rmobs
+				proxy.registerRenderers();
 
 
 			}
 
-
+			//to make it easier to register entities and make new ones
 		public static void registerEntity(Class entityClass, String name)
 			{
 				int entityID = EntityRegistry.findGlobalUniqueEntityId();

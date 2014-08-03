@@ -1,0 +1,16 @@
+[
+{
+  "modid": "buffymod",
+  "name": "Buffy Mod",
+  "description": "The Slayer Mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Arne-5"],
+  "credits": "The Forge and FML Team",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

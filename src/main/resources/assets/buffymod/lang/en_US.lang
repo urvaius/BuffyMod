@@ -4,5 +4,6 @@ itemGroup.BuffyMod=BuffyMod
 
 
 item.itemTest.name=Item Test
+item.woodStake.name= Wood Stake
 
 entity.entityTest.name=Entity Test

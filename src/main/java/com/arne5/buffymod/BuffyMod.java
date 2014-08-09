@@ -34,7 +34,7 @@ public class BuffyMod
 		//stake items
 		public static Item woodStake;
 		int woodStakeID = 500;
-		
+
 		public static CreativeTabs tabBuffyMod = new CreativeTabsBuffyMod("BuffyMod");
 		@Mod.EventHandler
 		public void preInit(FMLPreInitializationEvent event)

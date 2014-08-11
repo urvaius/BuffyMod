@@ -1,6 +1,5 @@
 package com.arne5.buffymod;
 
-import com.arne5.buffymod.mobs.ModelFrankenstein;
 import com.arne5.buffymod.mobs.ModelFrankensteinMob;
 import com.arne5.buffymod.proxy.CommonProxy;
 import cpw.mods.fml.common.Mod;
@@ -14,11 +13,7 @@ import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemSword;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraft.world.biome.BiomeGenForest;
-import net.minecraft.world.biome.BiomeGenPlains;
-import net.minecraftforge.common.MinecraftForge;
 
 import java.util.Random;
 
@@ -57,7 +52,7 @@ public class BuffyMod
 				//this is working with woodStake Class
 				//here is the base new item dont have to do the one below texture nam is in class
 				//woodStake = new woodStake(woodStakeID,Item.ToolMaterial.WOOD).setUnlocalizedName("woodStake").setCreativeTab(CreativeTabs.tabCombat).setTextureName(BuffyMod.MODID + ":" +"woodStake");
-				woodStake = new woodStake(woodStakeID,Item.ToolMaterial.WOOD).setUnlocalizedName("woodStake").setCreativeTab(CreativeTabs.tabCombat);
+				woodStake = new com.arne5.buffymod.items.woodStake(woodStakeID,Item.ToolMaterial.WOOD).setUnlocalizedName("woodStake").setCreativeTab(CreativeTabs.tabCombat);
 				//then register it. dont need the substing part i guess check on later
 				GameRegistry.registerItem(itemTest, itemTest.getUnlocalizedName().substring(5));
 				//GameRegistry.registerItem(woodStake, woodStake.getUnlocalizedName().substring(5));

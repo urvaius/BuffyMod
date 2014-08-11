@@ -1,4 +1,4 @@
-package com.arne5.buffymod;
+package com.arne5.buffymod.items;
 
 import com.google.common.collect.Multimap;
 import cpw.mods.fml.relauncher.Side;

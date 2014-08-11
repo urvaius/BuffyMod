@@ -12,7 +12,9 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.biome.BiomeGenBase;
 
 import java.util.Random;
@@ -58,14 +60,15 @@ public class BuffyMod
 				//GameRegistry.registerItem(woodStake, woodStake.getUnlocalizedName().substring(5));
 				//for wood stake not sure of unlocalized or this one
 				GameRegistry.registerItem(woodStake,"woodStake");
-
+				//create woodstake in a recipe  make it have s special item to make it later on
+				GameRegistry.addShapedRecipe(new ItemStack(BuffyMod.woodStake, 1), new Object[]{" C ", " C "," C ", 'C', Items.stick});
 
 
 
 				//call entities
 				//registerEntity1(ModelFrankensteinMob.class, "Frankenstein");
 				//register teh frankenstein differently with registerfrank class
-				registerFrank(ModelFrankensteinMob.class,"Frankenstein",0xeaeae8, 0xc99a13);
+				registerFrank(ModelFrankensteinMob.class, "Frankenstein", 0xeaeae8, 0xc99a13);
 				//try to spawn
 				//addSpawn(ModelFrankensteinMob.class, 10,1, 3,BiomeGenBase.birchForest );
 
@@ -108,11 +111,7 @@ public class BuffyMod
 			EntityList.entityEggs.put(Integer.valueOf(id), new EntityList.EntityEggInfo(id, bkEggColor, fgEggColor));
 		}
 
-		public void addSpawn(Class<ModelFrankensteinMob> entityClass, int spawnProb, int min, int max, BiomeGenBase[] biomes) {
-			if (spawnProb > 0) {
-				EntityRegistry.addSpawn(entityClass, spawnProb, min, max, EnumCreatureType.creature, biomes);
-			}
-		}
+
 
 
 			//to make it easier to register entities and make new ones these are test ones and proably ok

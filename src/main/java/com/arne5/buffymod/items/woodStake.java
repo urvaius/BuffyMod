@@ -23,10 +23,14 @@ import net.minecraft.world.World;
  */
 public class woodStake extends ItemSword
 	{
+		private float damageMod;
 
 		public woodStake(int id, Item.ToolMaterial mat)
 			{
 				super(mat);
+				this.maxStackSize = 1;
+
+
 
 
 			}

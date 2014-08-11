@@ -1,5 +1,7 @@
 package com.arne5.buffymod;
 
+import com.arne5.buffymod.mobs.ModelFrankenstein;
+import com.arne5.buffymod.mobs.ModelFrankensteinMob;
 import com.arne5.buffymod.proxy.CommonProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -9,9 +11,11 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityList;
+import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSword;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.MinecraftForge;
 
 import java.util.Random;
@@ -62,8 +66,19 @@ public class BuffyMod
 
 
 				//call entities
-				registerEntity(EntityTestWithAI.class, "entityTestWithAI");
-				registerEntity(EntityTest.class, "entityTest");
+				registerEntity1(ModelFrankensteinMob.class,"Frankenstein");
+				//register teh frankenstein different
+				
+
+
+
+
+
+
+
+				//registe entities
+				registerEntity1(EntityTestWithAI.class, "entityTestWithAI");
+				registerEntity1(EntityTest.class, "entityTest");
 
 				GameRegistry.registerBlock(blockTest, blockTest.getUnlocalizedName().substring(5));
 
@@ -73,8 +88,12 @@ public class BuffyMod
 
 			}
 
+
+
+
+
 			//to make it easier to register entities and make new ones
-		public static void registerEntity(Class entityClass, String name)
+		public static void registerEntity1(Class entityClass, String name)
 			{
 				int entityID = EntityRegistry.findGlobalUniqueEntityId();
 				long seed = name.hashCode();
@@ -85,6 +104,8 @@ public class BuffyMod
 				EntityRegistry.registerGlobalEntityID(entityClass, name, entityID);
 				EntityRegistry.registerModEntity(entityClass, name, entityID, instance, 64, 1, true);
 				EntityList.entityEggs.put(Integer.valueOf(entityID), new EntityList.EntityEggInfo(entityID, primaryColor, secondaryColor));
+
+
 			}
 
 	}

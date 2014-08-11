@@ -7,3 +7,4 @@ item.itemTest.name=Item Test
 item.woodStake.name= Wood Stake
 
 entity.entityTest.name=Entity Test
+entity.entityTestWithAI.name=Entity With AI

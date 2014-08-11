@@ -12,6 +12,7 @@ import net.minecraft.entity.EntityList;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSword;
+import net.minecraftforge.common.MinecraftForge;
 
 import java.util.Random;
 
@@ -60,7 +61,8 @@ public class BuffyMod
 
 
 
-				//call entity
+				//call entities
+				registerEntity(EntityTestWithAI.class, "entityTestWithAI");
 				registerEntity(EntityTest.class, "entityTest");
 
 				GameRegistry.registerBlock(blockTest, blockTest.getUnlocalizedName().substring(5));

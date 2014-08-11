@@ -18,26 +18,12 @@ public class EntityTest extends EntityMob
 
 
 
-			//this will act like a mob now
-			this.tasks.addTask(1, new EntityAISwimming(this));
-			this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1.2D, true));
-			this.tasks.addTask(3, new EntityAIWander(this, 1.0D));
-			this.tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-			this.tasks.addTask(5, new EntityAILookIdle(this));
-
-			this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
-			this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
-
 
 
 
 		}
 
-		//adds your custom ai to mob
-		public boolean isAIEnabled()
-			{
-				return true;
-			}
+
 		@Override
 		protected void applyEntityAttributes()
 			{

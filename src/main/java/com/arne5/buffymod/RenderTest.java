@@ -13,9 +13,10 @@ public class RenderTest extends RenderBiped
 
 		private static final ResourceLocation textureLocation = new ResourceLocation(BuffyMod.MODID + ":" + "textures/models/entityTest.png");
 
-		public RenderTest(ModelBiped model, float shadowSize) {
+		public RenderTest(ModelBiped model, float shadowSize)
+			{
 			super(model, shadowSize);
-		}
+			}
 
 		@Override
 		protected ResourceLocation getEntityTexture(Entity par1Entity)

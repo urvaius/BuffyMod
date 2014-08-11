@@ -16,6 +16,8 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.util.EnumHelper;
+import com.arne5.buffymod.items.woodStake;
 
 import java.util.Random;
 
@@ -28,6 +30,20 @@ public class BuffyMod
 
 		@SidedProxy(clientSide="com.arne5.buffymod.proxy.ClientProxy", serverSide="com.arne5.buffymod.proxy.CommonProxy")
 		public static CommonProxy proxy;
+		//custom material for wood stake and others
+		/*//The first number in the brakets is the harvest level.
+		Level 0 (gold and wood) can't mine iron ore...
+		Level 1 (stone) can't mine gold ore...
+		Level 2 (iron) can't mine obsidian.
+		Level 3 (diamond) can mine every breakable block.
+		The second number of uses of the Material.
+		wood = 59, stone = 131, iron = 250, diamond = 1561, gold = 32
+		The third number is the strength against blocks.
+		wood = 2.0F, stone = 4.0F, iron = 6.0F, diamond = 8.0F, gold 12.0F
+		The fourth number is the damage against entities.
+		wood = 0.0F, stone = 1.0F, iron = 2.0F, diamond = 3.0F, gold 0.0F
+		The last number is enchantability factor of the Material.
+			wood = 15, stone = 5, iron = 14, diamond = 10, gold 22*/
 
 
 		@Mod.Instance(MODID)
@@ -38,6 +54,8 @@ public class BuffyMod
 		//stake items
 		public static Item woodStake;
 		int woodStakeID = 500;
+		public static final Item.ToolMaterial WoodStakeMaterial = EnumHelper.addToolMaterial("WoodStakeMaterial", 0, 250, 5.0F, 3.0F, 22);
+
 
 		public static CreativeTabs tabBuffyMod = new CreativeTabsBuffyMod("BuffyMod");
 		@Mod.EventHandler
@@ -54,14 +72,16 @@ public class BuffyMod
 				//this is working with woodStake Class
 				//here is the base new item dont have to do the one below texture nam is in class
 				//woodStake = new woodStake(woodStakeID,Item.ToolMaterial.WOOD).setUnlocalizedName("woodStake").setCreativeTab(CreativeTabs.tabCombat).setTextureName(BuffyMod.MODID + ":" +"woodStake");
-				woodStake = new com.arne5.buffymod.items.woodStake(woodStakeID,Item.ToolMaterial.WOOD).setUnlocalizedName("woodStake").setCreativeTab(CreativeTabs.tabCombat);
-				//then register it. dont need the substing part i guess check on later
-				GameRegistry.registerItem(itemTest, itemTest.getUnlocalizedName().substring(5));
+				woodStake = new woodStake(woodStakeID,WoodStakeMaterial).setUnlocalizedName("woodStake").setCreativeTab(CreativeTabs.tabCombat);
 				//GameRegistry.registerItem(woodStake, woodStake.getUnlocalizedName().substring(5));
 				//for wood stake not sure of unlocalized or this one
 				GameRegistry.registerItem(woodStake,"woodStake");
+
+				//then register it. dont need the substing part i guess check on later
+				GameRegistry.registerItem(itemTest, itemTest.getUnlocalizedName().substring(5));
+
 				//create woodstake in a recipe  make it have s special item to make it later on
-				GameRegistry.addShapedRecipe(new ItemStack(BuffyMod.woodStake, 1), new Object[]{" C ", " C "," C ", 'C', Items.stick});
+				GameRegistry.addShapedRecipe(new ItemStack(BuffyMod.woodStake, 1), new Object[]{" C ", " C ", " C ", 'C', Items.stick});
 
 
 

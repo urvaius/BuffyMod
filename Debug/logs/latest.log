@@ -1,28 +1,28 @@
-[20:28:57] [main/INFO]: Setting user: ForgeDevName
-[20:28:58] [Client thread/INFO]: LWJGL Version: 2.9.1
-[20:28:58] [Client thread/ERROR]: Couldn't initialize twitch stream
-[20:29:03] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Buffy Mod
-[20:29:04] [Sound Library Loader/INFO]: Sound engine started
-[20:29:04] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
-[20:29:04] [Client thread/INFO]: Created: 512x512 textures/items-atlas
-[20:29:04] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Buffy Mod
-[20:29:04] [Client thread/INFO]: Created: 512x512 textures/items-atlas
-[20:29:05] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
-[20:29:05] [Sound Library Loader/INFO]: Sound engine started
-[20:29:10] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
-[20:29:10] [Server thread/INFO]: Generating keypair
-[20:29:10] [Server thread/INFO]: Preparing start region for level 0
-[20:29:11] [Server thread/INFO]: Changing view distance to 12, from 10
-[20:29:11] [Server thread/INFO]: ForgeDevName[local:E:38db85f7] logged in with entity id 384 at (237.69999998807907, 75.0, -129.675851918034)
-[20:29:11] [Server thread/INFO]: ForgeDevName joined the game
-[20:29:54] [Server thread/INFO]: Saving and pausing game...
-[20:29:54] [Server thread/INFO]: Saving chunks for level 'buffyworld'/Overworld
-[20:29:54] [Server thread/INFO]: Saving chunks for level 'buffyworld'/Nether
-[20:29:54] [Server thread/INFO]: Saving chunks for level 'buffyworld'/The End
-[20:29:55] [Server thread/INFO]: Stopping server
-[20:29:55] [Server thread/INFO]: Saving players
-[20:29:55] [Server thread/INFO]: Saving worlds
-[20:29:55] [Server thread/INFO]: Saving chunks for level 'buffyworld'/Overworld
-[20:29:55] [Server thread/INFO]: Saving chunks for level 'buffyworld'/Nether
-[20:29:55] [Server thread/INFO]: Saving chunks for level 'buffyworld'/The End
-[20:29:57] [Client thread/INFO]: Stopping!
+[22:23:03] [main/INFO]: Setting user: ForgeDevName
+[22:23:04] [Client thread/INFO]: LWJGL Version: 2.9.1
+[22:23:05] [Client thread/ERROR]: Couldn't initialize twitch stream
+[22:23:10] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Buffy Mod
+[22:23:11] [Sound Library Loader/INFO]: Sound engine started
+[22:23:11] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[22:23:11] [Client thread/INFO]: Created: 512x512 textures/items-atlas
+[22:23:11] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Buffy Mod
+[22:23:11] [Client thread/INFO]: Created: 512x512 textures/items-atlas
+[22:23:12] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[22:23:13] [Sound Library Loader/INFO]: Sound engine started
+[22:23:19] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[22:23:19] [Server thread/INFO]: Generating keypair
+[22:23:19] [Server thread/INFO]: Preparing start region for level 0
+[22:23:20] [Server thread/INFO]: Changing view distance to 12, from 10
+[22:23:20] [Server thread/INFO]: ForgeDevName[local:E:e9944486] logged in with entity id 131 at (-197.7074321452286, 64.0, -242.5200380186725)
+[22:23:20] [Server thread/INFO]: ForgeDevName joined the game
+[22:24:23] [Server thread/INFO]: Saving and pausing game...
+[22:24:23] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[22:24:23] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[22:24:23] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[22:24:24] [Server thread/INFO]: Stopping server
+[22:24:24] [Server thread/INFO]: Saving players
+[22:24:24] [Server thread/INFO]: Saving worlds
+[22:24:24] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[22:24:24] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[22:24:24] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[22:24:26] [Client thread/INFO]: Stopping!

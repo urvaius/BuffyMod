@@ -16,6 +16,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSword;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.BiomeGenForest;
+import net.minecraft.world.biome.BiomeGenPlains;
 import net.minecraftforge.common.MinecraftForge;
 
 import java.util.Random;
@@ -66,33 +68,59 @@ public class BuffyMod
 
 
 				//call entities
-				registerEntity1(ModelFrankensteinMob.class,"Frankenstein");
-				//register teh frankenstein different
-				
+				//registerEntity1(ModelFrankensteinMob.class, "Frankenstein");
+				//register teh frankenstein differently with registerfrank class
+				registerFrank(ModelFrankensteinMob.class,"Frankenstein",0xeaeae8, 0xc99a13);
+				//try to spawn
+				//addSpawn(ModelFrankensteinMob.class, 10,1, 3,BiomeGenBase.birchForest );
+
+				//addSpawn(ModelFrankensteinMob.class,10,1,3,BiomeGenBase.getBiome(p_i45377_1_));
+				//cant get that constructor to work do this for now just for forest testing spawn
+				//EntityRegistry.addSpawn(ModelFrankensteinMob.class, 10, 1, 5, EnumCreatureType.creature, BiomeGenBase.forest);
+				//EntityRegistry.addSpawn(ModelFrankensteinMob.class, 20, 5, 10, EnumCreatureType.creature, BiomeGenBase.plains);
+				//EntityRegistry.addSpawn(ModelFrankensteinMob.class, 100, 4, 4, EnumCreatureType.monster);
+				//EntityRegistry.addSpawn(ModelFrankensteinMob.class, 100, 4, 4, EnumCreatureType.creature);
+				EntityRegistry.addSpawn(ModelFrankensteinMob.class, 100, 4, 4, EnumCreatureType.monster,BiomeGenBase.beach,BiomeGenBase.coldBeach,BiomeGenBase.coldTaiga,BiomeGenBase.coldTaigaHills, BiomeGenBase.desert,BiomeGenBase.desertHills,BiomeGenBase.extremeHills,BiomeGenBase.jungleHills,BiomeGenBase.savanna, BiomeGenBase.extremeHills, BiomeGenBase.forest,BiomeGenBase.birchForestHills, BiomeGenBase.jungle, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.taigaHills,BiomeGenBase.birchForest);
 
 
 
 
 
 
-
-				//registe entities
+				//register entities
 				registerEntity1(EntityTestWithAI.class, "entityTestWithAI");
+				//try to spawn this one too frankis not working
+				//EntityRegistry.addSpawn(EntityTestWithAI.class,100,4,4,EnumCreatureType.creature,BiomeGenBase.beach,BiomeGenBase.coldBeach,BiomeGenBase.coldTaiga,BiomeGenBase.coldTaigaHills, BiomeGenBase.desert,BiomeGenBase.desertHills,BiomeGenBase.extremeHills,BiomeGenBase.jungleHills,BiomeGenBase.savanna, BiomeGenBase.extremeHills, BiomeGenBase.forest,BiomeGenBase.birchForestHills, BiomeGenBase.jungle, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.taigaHills,BiomeGenBase.birchForest);
+
+
+
 				registerEntity1(EntityTest.class, "entityTest");
 
 				GameRegistry.registerBlock(blockTest, blockTest.getUnlocalizedName().substring(5));
 
-				//reggister rendering fo rmobs
+				//register rendering for mobs
 				proxy.registerRenderers();
 
 
 			}
 
 
+		private void registerFrank(Class<ModelFrankensteinMob> entityClass, String entityName,
+		                            int bkEggColor, int fgEggColor) {
+			int id = EntityRegistry.findGlobalUniqueEntityId();
+
+			EntityRegistry.registerGlobalEntityID(entityClass, entityName, id);
+			EntityList.entityEggs.put(Integer.valueOf(id), new EntityList.EntityEggInfo(id, bkEggColor, fgEggColor));
+		}
+
+		public void addSpawn(Class<ModelFrankensteinMob> entityClass, int spawnProb, int min, int max, BiomeGenBase[] biomes) {
+			if (spawnProb > 0) {
+				EntityRegistry.addSpawn(entityClass, spawnProb, min, max, EnumCreatureType.creature, biomes);
+			}
+		}
 
 
-
-			//to make it easier to register entities and make new ones
+			//to make it easier to register entities and make new ones these are test ones and proably ok
 		public static void registerEntity1(Class entityClass, String name)
 			{
 				int entityID = EntityRegistry.findGlobalUniqueEntityId();

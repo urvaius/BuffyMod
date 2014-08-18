@@ -3,13 +3,8 @@ package com.arne5.buffymod.mobs;
 
 
 		import java.util.Calendar;
-		import java.util.Random;
 
-		import cpw.mods.fml.relauncher.Side;
-		import cpw.mods.fml.relauncher.SideOnly;
 		import net.minecraft.block.Block;
-		import net.minecraft.client.model.ModelBase;
-		import net.minecraft.client.renderer.entity.RenderLiving;
 		import net.minecraft.entity.Entity;
 		import net.minecraft.entity.EnumCreatureAttribute;
 		import net.minecraft.entity.IEntityLivingData;
@@ -28,8 +23,6 @@ package com.arne5.buffymod.mobs;
 		import net.minecraft.entity.ai.attributes.IAttribute;
 		import net.minecraft.entity.ai.attributes.RangedAttribute;
 		import net.minecraft.entity.monster.EntityMob;
-		import net.minecraft.entity.monster.EntitySkeleton;
-		import net.minecraft.entity.monster.EntityZombie;
 		import net.minecraft.entity.passive.EntityVillager;
 		import net.minecraft.entity.player.EntityPlayer;
 		import net.minecraft.init.Blocks;
@@ -39,12 +32,10 @@ package com.arne5.buffymod.mobs;
 		import net.minecraft.potion.Potion;
 		import net.minecraft.potion.PotionEffect;
 		import net.minecraft.util.MathHelper;
-		import net.minecraft.util.ResourceLocation;
-		import net.minecraft.world.EnumDifficulty;
 		import net.minecraft.world.World;
 		import net.minecraftforge.common.ForgeModContainer;
 
-public class ModelFrankensteinMob extends EntityMob
+public class FrankensteinMob extends EntityMob
 	{
 		protected static final IAttribute field_110186_bp = (new RangedAttribute("zombie.spawnReinforcements", 0.0D, 0.0D, 1.0D)).setDescription("Spawn Reinforcements Chance");
 		private final EntityAIBreakDoor field_146075_bs = new EntityAIBreakDoor(this);
@@ -53,7 +44,7 @@ public class ModelFrankensteinMob extends EntityMob
 		private float field_146074_bv = -1.0F;
 		private float field_146073_bw;
 
-		public ModelFrankensteinMob(World par1World)
+		public FrankensteinMob(World par1World)
 			{
 				super(par1World);
 				this.getNavigator().setBreakDoors(true);
@@ -238,12 +229,12 @@ public class ModelFrankensteinMob extends EntityMob
 
 				if (par1EntityLivingData1 == null)
 					{
-						par1EntityLivingData1 = new ModelFrankensteinMob.GroupData(this.worldObj.rand.nextFloat() < ForgeModContainer.zombieBabyChance, this.worldObj.rand.nextFloat() < 0.05F, null);
+						par1EntityLivingData1 = new FrankensteinMob.GroupData(this.worldObj.rand.nextFloat() < ForgeModContainer.zombieBabyChance, this.worldObj.rand.nextFloat() < 0.05F, null);
 					}
 
-				if (par1EntityLivingData1 instanceof ModelFrankensteinMob.GroupData)
+				if (par1EntityLivingData1 instanceof FrankensteinMob.GroupData)
 					{
-						ModelFrankensteinMob.GroupData groupdata = (ModelFrankensteinMob.GroupData)par1EntityLivingData1;
+						FrankensteinMob.GroupData groupdata = (FrankensteinMob.GroupData)par1EntityLivingData1;
 
 					}
 

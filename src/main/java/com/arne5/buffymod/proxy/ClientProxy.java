@@ -1,9 +1,7 @@
 package com.arne5.buffymod.proxy;
 
 import com.arne5.buffymod.EntityTestWithAI;
-import com.arne5.buffymod.mobs.ModelFrankenstein;
-import com.arne5.buffymod.mobs.ModelFrankensteinMob;
-import com.arne5.buffymod.mobs.RenderFrankenstein;
+import com.arne5.buffymod.mobs.*;
 import net.minecraft.client.model.ModelBiped;
 
 import com.arne5.buffymod.EntityTest;
@@ -16,6 +14,8 @@ public class ClientProxy extends CommonProxy
 		{    //render model with class foryour new mob
 			RenderingRegistry.registerEntityRenderingHandler(EntityTest.class, new RenderTest(new ModelBiped(), 0.5F));
 			RenderingRegistry.registerEntityRenderingHandler(EntityTestWithAI.class,new RenderTest(new ModelBiped(),0.5f));
-			RenderingRegistry.registerEntityRenderingHandler(ModelFrankensteinMob.class,new RenderFrankenstein(new ModelFrankenstein(),0.5f));
+			RenderingRegistry.registerEntityRenderingHandler(FrankensteinMob.class,new RenderFrankenstein(new ModelFrankenstein(),0.5f));
+			RenderingRegistry.registerEntityRenderingHandler(VampireBoyMob.class,new RenderVamireBoy(new ModelVampireBoy(),0.5f));
+
 		}
 	}

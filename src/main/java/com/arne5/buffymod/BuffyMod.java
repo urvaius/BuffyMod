@@ -1,6 +1,7 @@
 package com.arne5.buffymod;
 
-import com.arne5.buffymod.mobs.ModelFrankensteinMob;
+import com.arne5.buffymod.mobs.FrankensteinMob;
+import com.arne5.buffymod.mobs.VampireBoyMob;
 import com.arne5.buffymod.proxy.CommonProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -88,17 +89,18 @@ public class BuffyMod
 				//call entities
 				//registerEntity1(ModelFrankensteinMob.class, "Frankenstein");
 				//register teh frankenstein differently with registerfrank class
-				registerFrank(ModelFrankensteinMob.class, "Frankenstein", 0xeaeae8, 0xc99a13);
+				registerFrank(FrankensteinMob.class, "Frankenstein", 0xeaeae8, 0xc99a13);
 				//try to spawn
 				//addSpawn(ModelFrankensteinMob.class, 10,1, 3,BiomeGenBase.birchForest );
 
 				//addSpawn(ModelFrankensteinMob.class,10,1,3,BiomeGenBase.getBiome(p_i45377_1_));
 				//cant get that constructor to work do this for now just for forest testing spawn
-				//EntityRegistry.addSpawn(ModelFrankensteinMob.class, 10, 1, 5, EnumCreatureType.creature, BiomeGenBase.forest);
-				//EntityRegistry.addSpawn(ModelFrankensteinMob.class, 20, 5, 10, EnumCreatureType.creature, BiomeGenBase.plains);
-				//EntityRegistry.addSpawn(ModelFrankensteinMob.class, 100, 4, 4, EnumCreatureType.monster);
-				//EntityRegistry.addSpawn(ModelFrankensteinMob.class, 100, 4, 4, EnumCreatureType.creature);
-				EntityRegistry.addSpawn(ModelFrankensteinMob.class, 100, 4, 4, EnumCreatureType.monster,BiomeGenBase.beach,BiomeGenBase.coldBeach,BiomeGenBase.coldTaiga,BiomeGenBase.coldTaigaHills, BiomeGenBase.desert,BiomeGenBase.desertHills,BiomeGenBase.extremeHills,BiomeGenBase.jungleHills,BiomeGenBase.savanna, BiomeGenBase.extremeHills, BiomeGenBase.forest,BiomeGenBase.birchForestHills, BiomeGenBase.jungle, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.taigaHills,BiomeGenBase.birchForest);
+				
+				EntityRegistry.addSpawn(FrankensteinMob.class, 100, 4, 4, EnumCreatureType.monster,BiomeGenBase.beach,BiomeGenBase.coldBeach,BiomeGenBase.coldTaiga,BiomeGenBase.coldTaigaHills, BiomeGenBase.desert,BiomeGenBase.desertHills,BiomeGenBase.extremeHills,BiomeGenBase.jungleHills,BiomeGenBase.savanna, BiomeGenBase.extremeHills, BiomeGenBase.forest,BiomeGenBase.birchForestHills, BiomeGenBase.jungle, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.taigaHills,BiomeGenBase.birchForest);
+
+				//register vampire boy and spawn
+				registerEntity1(VampireBoyMob.class, "VampireBoy");
+				EntityRegistry.addSpawn(VampireBoyMob.class, 100 ,4 , 4, EnumCreatureType.monster,BiomeGenBase.beach,BiomeGenBase.coldBeach,BiomeGenBase.coldTaiga,BiomeGenBase.coldTaigaHills, BiomeGenBase.desert,BiomeGenBase.desertHills,BiomeGenBase.extremeHills,BiomeGenBase.jungleHills,BiomeGenBase.savanna, BiomeGenBase.extremeHills, BiomeGenBase.forest,BiomeGenBase.birchForestHills, BiomeGenBase.jungle, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.taigaHills,BiomeGenBase.birchForest);
 
 
 
@@ -123,8 +125,11 @@ public class BuffyMod
 			}
 
 
-		private void registerFrank(Class<ModelFrankensteinMob> entityClass, String entityName,
-		                            int bkEggColor, int fgEggColor) {
+
+
+		private void registerFrank(Class<FrankensteinMob> entityClass, String entityName,
+		                            int bkEggColor, int fgEggColor)
+			{
 			int id = EntityRegistry.findGlobalUniqueEntityId();
 
 			EntityRegistry.registerGlobalEntityID(entityClass, entityName, id);
